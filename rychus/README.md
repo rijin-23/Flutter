@@ -1,6 +1,6 @@
 # rychus
 
-A new Flutter application.
+This is a Login Page UI design.
 
 ## Getting Started
 
