@@ -1,6 +1,6 @@
-# firstproject
+# Twitch Profile
 
-A new Flutter application.
+An application made on flutter for twitch profile with a drawer.
 
 ## Getting Started
 
