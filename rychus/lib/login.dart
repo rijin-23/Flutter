@@ -50,114 +50,117 @@ class Login extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(50.0),topRight: Radius.circular(50.0))
                 ),
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(
-                      height: 60.0,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 15.0,right: 15.0),
-                      padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                      decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.all(Radius.circular(40.0)),
-                          border: Border.all(color: Colors.lightBlueAccent, width: 2.0)
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: <Widget>[
+                      
+                      SizedBox(
+                        height: 60.0,
                       ),
-                      child: Column(
+                      Container(
+                        margin: EdgeInsets.only(left: 15.0,right: 15.0),
+                        padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                        decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            borderRadius: BorderRadius.all(Radius.circular(40.0)),
+                            border: Border.all(color: Colors.lightBlueAccent, width: 2.0)
+                        ),
+                        child: Column(
+                          children: <Widget>[
+                            TextField(
+                              decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: 'Email id or Username'
+                              ),
+                            ),
+                            Divider(
+                              height: 10.0,
+                              color: Colors.lightBlueAccent,
+                            ),
+                            TextField(
+                              decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: 'Password'
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 40.0,
+                      ),
+                      Container(
+                        width: 200,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                colors: [Colors.blue,Colors.lightBlue[200]]
+                            ),
+                            borderRadius: BorderRadius.circular(20.0)
+                        ),
+                        child: FlatButton(
+                          child: Text(
+                            'Login',
+                            style: TextStyle(
+                                color: Colors.white
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Text(
+                        'Forgot Password?',
+                        style: TextStyle(
+                            color: Colors.lightBlue
+                        ),
+                      ),
+                      SizedBox(
+                        height: 40.0,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          TextField(
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: 'Email id or Username'
+                          Container(
+                            width: 150,
+                            height: 50,
+                            decoration: BoxDecoration(
+                                color: Colors.indigo[400],
+                                borderRadius: BorderRadius.circular(20.0)
+                            ),
+                            child: FlatButton(
+                              child: Text(
+                                'Facebook',
+                                style: TextStyle(
+                                    color: Colors.white
+                                ),
+                              ),
                             ),
                           ),
-                          Divider(
-                            height: 10.0,
-                            color: Colors.lightBlueAccent,
+                          SizedBox(
+                            width: 20.0,
                           ),
-                          TextField(
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: 'Password'
+                          Container(
+                            width: 150,
+                            height: 50,
+                            decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(20.0)
                             ),
-                          ),
+                            child: FlatButton(
+                              child: Text(
+                                'G Mail',
+                                style: TextStyle(
+                                    color: Colors.white
+                                ),
+                              ),
+                            ),
+                          )
                         ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 40.0,
-                    ),
-                    Container(
-                      width: 200,
-                      height: 50,
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [Colors.blue,Colors.lightBlue[200]]
-                          ),
-                          borderRadius: BorderRadius.circular(20.0)
-                      ),
-                      child: FlatButton(
-                        child: Text(
-                          'Login',
-                          style: TextStyle(
-                              color: Colors.white
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                    ),
-                    Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                          color: Colors.lightBlue
-                      ),
-                    ),
-                    SizedBox(
-                      height: 40.0,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Container(
-                          width: 150,
-                          height: 50,
-                          decoration: BoxDecoration(
-                              color: Colors.indigo[400],
-                              borderRadius: BorderRadius.circular(20.0)
-                          ),
-                          child: FlatButton(
-                            child: Text(
-                              'Facebook',
-                              style: TextStyle(
-                                  color: Colors.white
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20.0,
-                        ),
-                        Container(
-                          width: 150,
-                          height: 50,
-                          decoration: BoxDecoration(
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(20.0)
-                          ),
-                          child: FlatButton(
-                            child: Text(
-                              'G Mail',
-                              style: TextStyle(
-                                  color: Colors.white
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             )
