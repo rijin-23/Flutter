@@ -1,6 +1,6 @@
 # quotes
 
-A new Flutter application.
+An application which shows some quotes using cards.
 
 ## Getting Started
 
