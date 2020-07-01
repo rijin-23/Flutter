@@ -1,6 +1,6 @@
 # worldtime
 
-A new Flutter application.
+A new Flutter application to display the timings arounf the world using world time api.
 
 ## Getting Started
 
