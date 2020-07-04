@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'services/weather.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,6 +14,10 @@ class _MyAppState extends State<MyApp> {
 
   double current_temp = 0.0;  
   String place = 'Loading...';
+  List <FaIcon> leads = [
+  FaIcon(FontAwesomeIcons.radiation),
+  FaIcon(FontAwesomeIcons.water),
+  FaIcon(FontAwesomeIcons.wind)];
   List <String> status = ['Pressure','Humidity','Wind speed'];
   List status_value = [0.0,0.0,0.0];
   String weather_condition = 'loading...';
@@ -76,20 +81,22 @@ class _MyAppState extends State<MyApp> {
                 ),
                 Expanded(child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.blue[500]
+                    color: Colors.white
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ListView.builder(itemCount: status.length,itemBuilder: (context,index){
                       return Card(
-                        color: Colors.white.withOpacity(0.5),
+                        elevation: 0.0,
+                        color: Colors.white,
                         child: ListTile(
                           onTap: () {},
+                          leading: leads[index],
                           title: Text(status[index],style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.blue[700],
                             fontSize: 18.0
                           ),),
-                          subtitle: Text('${status_value[index]}'),
+                          trailing: Text('${status_value[index]}'),
                         ),
                       );
                     }),
