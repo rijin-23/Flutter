@@ -1,6 +1,7 @@
 
 import 'package:http/http.dart';
 import 'dart:convert';
+import 'package:weather_app/services/api_key.dart';
 
 
 class Weather{
@@ -10,10 +11,15 @@ var conditions;
 int pressure;
 int humidity;
 double wind_speed;
+String api_key;
+
 Weather({this.location});
 Future<void> getWeather() async{
+    Api_key key_store = Api_key();
+    key_store.key();
+    api_key = key_store.key_value;
     try{
-    Response response = await get('http://api.openweathermap.org/data/2.5/weather?q=$location&appid=41c1eb75b59bc0891cc8c3fe76a72875');
+    Response response = await get('http://api.openweathermap.org/data/2.5/weather?q=$location&appid=$api_key');
     var weather = jsonDecode(response.body);
     print(weather);
     for (var we in weather['weather']) {
