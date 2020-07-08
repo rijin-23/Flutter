@@ -30,7 +30,7 @@ String location;
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Colors.blue[500],
         body: SpinKitRotatingCircle(
   color: Colors.white,
   size: 50.0,

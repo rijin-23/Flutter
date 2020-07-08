@@ -1,4 +1,8 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:worldtime/pages/weather_home.dart';
+import 'package:worldtime/services/weather.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -12,7 +16,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     data = data.isNotEmpty? data: ModalRoute.of(context).settings.arguments;
-    print(data);
+    print(data['location']);
     String bg = data['isDay'] ? 'day.png': 'night.png';
     Color cl = data['isDay'] ? Colors.blue : Colors.indigo;
     return Scaffold(
@@ -58,7 +62,25 @@ class _HomeState extends State<Home> {
                 ),
                 Text(data['time'],
                 style: TextStyle(fontSize: 65.0,
-                color: Colors.white),)
+                color: Colors.white),),
+                SizedBox(
+                  height: 50.0
+                ),
+                Container(
+                  decoration: BoxDecoration(color: Colors.white.withOpacity(0.7),
+                  borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                  child: FlatButton.icon(
+                    onPressed:() {
+                      
+                     Navigator.pushNamed(context, '/weather_home',arguments: data['location']);
+                    } 
+              
+                    , icon: Icon(Icons.forward), label: Text('Get weather details',
+                  style: TextStyle(
+                    color:Colors.grey[700]
+                  ),)),
+                  
+                ),
               ],
             ),
           ),
