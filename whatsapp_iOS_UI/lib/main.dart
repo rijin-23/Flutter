@@ -21,7 +21,36 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  List <String> imgs = [
+  final Map data = {
+    'imgs':[
+      'https://dhlm2eb86cbhs.cloudfront.net/public/thumbs/news/2020/07/32003/facebook-avatar-main_425_735.jpg',
+    'https://s3.amazonaws.com/artistsnclients/k63/samples/pju_800.JPG',
+    'https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2019/12/9-Best-Online-Avatars-and-How-to-Make-Your-Own-for-Free-image1-5.png',
+    'https://www.reval.com.au/plugin/ace_v1.3/assets/avatars/profile-pic.jpg',
+    'https://www.w3schools.com/w3images/avatar6.png',
+    'https://www.w3schools.com/howto/img_avatar2.png'
+    ],
+
+    'names': [
+      'Billy',
+      'Claudia',
+      'Timmy',
+      'Jeff',
+      'Sarah',
+      'Jessica'
+    ],
+    
+    'msgs': [
+      'Wassup Billy?',
+      'I hope you are fine',
+      'No, I don\'t have it',
+      'Ssup?',
+      'Nah, just busy doing my homeworks',
+      'Ssup?'
+    ]
+  };
+
+ /* List <String> imgs = [
     'https://resize.indiatvnews.com/en/resize/newbucket/715_-/2020/04/bill-gates-2-1585750331.jpg',
     'https://wp.technologyreview.com/wp-content/uploads/2018/04/mark-zuckerberg-headshot-11.jpg',
     'https://www.biography.com/.image/t_share/MTE5NDg0MDU1MzM0OTc5MDg3/tim-cook-20967297-1-402.jpg',
@@ -46,9 +75,8 @@ class _HomeState extends State<Home> {
     'Ssup?',
     'Stop beng a crackhead Musk',
     'Ssup man?'
-  ];
+  ];*/
 
-  int _switchState = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -80,10 +108,6 @@ class _HomeState extends State<Home> {
                 trailing: Container(
                   child: GestureDetector(
                     onTap: (){
-                      setState(() {
-                        _switchState = _switchState +1;
-                        print(_switchState);
-                      });
                       
                     },
                     child: Icon(IconData(0xf417,fontFamily: CupertinoIcons.iconFont, 
@@ -99,7 +123,7 @@ class _HomeState extends State<Home> {
               ),
               SliverFillRemaining(
                 child: SingleChildScrollView(
-                                  child: Column(
+                  child: Column(
                     children: [
                       SizedBox(height: 5),
                       Container(
@@ -150,18 +174,18 @@ class _HomeState extends State<Home> {
                       ),
                       ListView.builder(shrinkWrap: true,itemBuilder: (context,index) {
                         return Material(
-                                                child: ListTile(
+                            child: ListTile(
                             leading: CircleAvatar(
-                              backgroundImage: NetworkImage(imgs[index]),
+                              backgroundImage: NetworkImage(data['imgs'][index]),
                             ),
                             title: Text(
-                              names[index],
+                              data['names'][index],
                               style: TextStyle(
                                 fontWeight: FontWeight.bold 
                               ),
                             ),
                             subtitle: Text(
-                              msgs[index],
+                              data['msgs'][index],
                             ),
                             trailing: Column(
                               children: [
@@ -184,7 +208,7 @@ class _HomeState extends State<Home> {
                           ),
                         );
                       },
-                      itemCount: imgs.length,)
+                      itemCount: data['imgs'].length,)
                     ],
                   ),
                 )
@@ -196,8 +220,5 @@ class _HomeState extends State<Home> {
          );
        });
       
-      
-      
-
   }
 }
