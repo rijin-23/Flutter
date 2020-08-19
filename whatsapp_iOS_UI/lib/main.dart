@@ -49,35 +49,7 @@ class _HomeState extends State<Home> {
       'Ssup?'
     ]
   };
-
- /* List <String> imgs = [
-    'https://resize.indiatvnews.com/en/resize/newbucket/715_-/2020/04/bill-gates-2-1585750331.jpg',
-    'https://wp.technologyreview.com/wp-content/uploads/2018/04/mark-zuckerberg-headshot-11.jpg',
-    'https://www.biography.com/.image/t_share/MTE5NDg0MDU1MzM0OTc5MDg3/tim-cook-20967297-1-402.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Jeff_Bezos_at_Amazon_Spheres_Grand_Opening_in_Seattle_-_2018_%2839074799225%29_%28cropped%29.jpg/220px-Jeff_Bezos_at_Amazon_Spheres_Grand_Opening_in_Seattle_-_2018_%2839074799225%29_%28cropped%29.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Elon_Musk_Royal_Society.jpg/220px-Elon_Musk_Royal_Society.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Sundar_Pichai_WEF_2020.png/220px-Sundar_Pichai_WEF_2020.png'
-  ];
-
-  List <String> names = [
-    'Billy',
-    'Mark',
-    'Timmy',
-    'Jeff (The Amazon guy)',
-    'Musk',
-    'Sundar Pichai'
-  ];
-
-  List <String> msgs= [
-    'Can I marry your daughter?',
-    'What about the election?',
-    'Can you give me a Macbook for free?',
-    'Ssup?',
-    'Stop beng a crackhead Musk',
-    'Ssup man?'
-  ];*/
-
-
+  
   @override
   Widget build(BuildContext context) {
       return CupertinoTabScaffold(
